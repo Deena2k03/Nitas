@@ -1,0 +1,2874 @@
+#nita-about-split-hero {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 75px);
+  overflow: hidden;
+  background: linear-gradient(145deg, #f8fafc 0%, #edf6ff 50%, #f1f8fe 100%);
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Times New Roman", Times, Georgia, serif;
+  padding: 9rem 0;
+}
+
+#nita-about-split-hero * {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, serif !important;
+}
+
+/* Background Crossfade Slider */
+#nita-about-split-hero .nita-split-bg-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+#nita-about-split-hero .nita-split-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 2s ease-in-out, transform 8s ease-out;
+}
+
+#nita-about-split-hero .nita-split-slide.active {
+  opacity: 0.55;
+  transform: scale(1);
+}
+
+/* Soft Contrast Scrim */
+#nita-about-split-hero .nita-split-scrim {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 30% 50%,
+    rgba(240, 248, 255, 0.15) 0%,
+    rgba(224, 242, 254, 0.14) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Ambient Glow Orbs */
+.nita-split-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.5;
+  animation: nitaSplitOrbFloat 14s infinite alternate ease-in-out;
+}
+
+.orb-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #7dd3fc, transparent 70%);
+  top: -10%;
+  left: -5%;
+}
+
+.orb-2 {
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, #93c5fd, transparent 70%);
+  bottom: -10%;
+  right: -5%;
+  animation-duration: 18s;
+}
+
+@keyframes nitaSplitOrbFloat {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(40px) translateX(25px) scale(1.08); }
+  100% { transform: translateY(-30px) translateX(-20px) scale(0.95); }
+}
+
+/* HD Wave Particle Canvas */
+#nita-about-wave-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: auto;
+}
+
+/* Main Split Grid */
+.nita-split-container {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 2.5rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+/* Left Column: Narrative Staggered Reveal */
+.nita-split-reveal {
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+}
+
+.nita-anim-target {
+  transform: translateY(120%);
+  opacity: 0;
+  animation: nitaSplitSlideUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes nitaSplitSlideUp {
+  0% { transform: translateY(120%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.nita-split-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0284c7;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+  animation-delay: 0.1s;
+}
+
+.nita-split-psi {
+  font-size: 1.2rem;
+  color: #0284c7;
+  line-height: 1;
+}
+
+.nita-split-heading {
+  font-size: clamp(2.5rem, 4.4vw, 4rem);
+  line-height: 1.14;
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0;
+  animation-delay: 0.25s;
+}
+
+.nita-split-heading em {
+  font-style: italic;
+  color: #0369a1;
+}
+
+.nita-split-text {
+  font-size: clamp(1.05rem, 1.35vw, 1.24rem);
+  line-height: 1.75;
+  color: #334155;
+  margin: 0;
+  animation-delay: 0.4s;
+}
+
+/* Ethos Metric Strip */
+.nita-split-ethos {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(2, 132, 199, 0.18);
+  padding: 1rem 1.4rem;
+  border-radius: 14px;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+  animation-delay: 0.55s;
+}
+
+.nita-ethos-item strong {
+  display: block;
+  font-size: 0.96rem;
+  color: #0f172a;
+  font-weight: bold;
+}
+
+.nita-ethos-item span {
+  display: block;
+  font-size: 0.82rem;
+  color: #0284c7;
+  font-style: italic;
+}
+
+.nita-ethos-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(2, 132, 199, 0.2);
+}
+
+/* Action Buttons */
+.nita-split-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 0.8rem;
+  animation-delay: 0.7s;
+}
+
+.nita-split-btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.2rem;
+  background: #0f172a;
+  color: #ffffff;
+  border: 1px solid #0f172a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+  transition: all 0.25s ease;
+}
+
+.nita-split-btn-dark:hover {
+  background: #0284c7;
+  border-color: #0284c7;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.3);
+}
+
+.nita-split-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #0369a1;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.nita-split-btn-ghost:hover {
+  color: #0f172a;
+  transform: translateX(4px);
+}
+
+/* Right Column: Sculptural Portal */
+.nita-split-sculpture {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.nita-sculpture-wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Rotating Optical Rings */
+.nita-optical-ring {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  border: 1px dashed rgba(2, 132, 199, 0.35);
+  animation: nitaSpinRing 30s linear infinite;
+}
+
+.nita-optical-ring-inner {
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(2, 132, 199, 0.15);
+  animation: nitaSpinRingRev 20s linear infinite;
+}
+
+@keyframes nitaSpinRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes nitaSpinRingRev {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* Central Glass Lens */
+.nita-portal-lens {
+  position: relative;
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  box-shadow: 0 20px 50px -10px rgba(2, 132, 199, 0.2), 0 0 0 1px rgba(2, 132, 199, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nita-portal-live-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.15);
+  animation: nitaLensPulse 8s infinite alternate ease-in-out;
+}
+
+@keyframes nitaLensPulse {
+  0% { transform: scale(1.1); }
+  100% { transform: scale(1.22); }
+}
+
+.nita-portal-glass-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.2rem;
+}
+
+/* Logo Styling Inside Circle */
+.nita-portal-logo-wrap {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(2, 132, 199, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.4rem;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.1);
+  padding: 4px;
+}
+
+.nita-portal-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.nita-portal-fallback-logo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #f0f9ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nita-fallback-psi {
+  font-size: 1.6rem;
+  color: #0284c7;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.nita-portal-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #0284c7;
+  font-weight: bold;
+  margin-bottom: 0.15rem;
+}
+
+.nita-portal-title {
+  font-size: 2rem;
+  font-weight: normal;
+  color: #0f172a;
+  letter-spacing: 0.05em;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.nita-portal-sub {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0.2rem 0 0.8rem 0;
+}
+
+.nita-portal-pulse-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 0.22rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  color: #166534;
+  font-weight: bold;
+}
+
+.nita-green-dot {
+  width: 6px;
+  height: 6px;
+  background: #16a34a;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #16a34a;
+}
+
+/* Floating Satellite Badges */
+.nita-float-badge {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid rgba(2, 132, 199, 0.2);
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  box-shadow: 0 10px 25px rgba(2, 132, 199, 0.12);
+  z-index: 3;
+  transition: transform 0.25s ease;
+}
+
+.nita-float-badge:hover {
+  transform: scale(1.05);
+}
+
+.float-top-right {
+  top: -15px;
+  right: -30px;
+}
+
+.float-bottom-left {
+  bottom: -15px;
+  left: -30px;
+}
+
+.nita-float-icon {
+  font-size: 1.2rem;
+}
+
+.nita-float-badge strong {
+  display: block;
+  font-size: 0.88rem;
+  color: #0f172a;
+}
+
+.nita-float-badge span {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .nita-split-container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .nita-split-narrative {
+    text-align: center;
+  }
+  .nita-split-ethos {
+    justify-content: center;
+  }
+  .nita-split-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .nita-sculpture-wrapper {
+    width: 300px;
+    height: 300px;
+  }
+  .nita-portal-lens {
+    width: 250px;
+    height: 250px;
+  }
+  .float-top-right,
+  .float-bottom-left {
+    position: static;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  .nita-split-ethos {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .nita-ethos-divider {
+    display: none;
+  }
+  .nita-split-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .nita-split-btn-dark {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+/* ---------- Large Tablet / Small Laptop ---------- */
+@media (max-width: 1100px) {
+
+  #nita-about-split-hero {
+    min-height: auto;
+    padding: 5rem 0;
+  }
+
+  .nita-split-container {
+    max-width: 100%;
+    padding: 0 2rem;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 2.5rem;
+  }
+
+  .nita-split-heading {
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+  }
+
+  .nita-split-text {
+    font-size: 1.05rem;
+  }
+
+  .nita-sculpture-wrapper {
+    width: 350px;
+    height: 350px;
+  }
+
+  .nita-portal-lens {
+    width: 290px;
+    height: 290px;
+  }
+
+  .float-top-right {
+    right: -5px;
+  }
+
+  .float-bottom-left {
+    left: -5px;
+  }
+}
+
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+
+  #nita-about-split-hero {
+    min-height: auto;
+    padding: 5rem 0 4rem;
+  }
+
+  .nita-split-container {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    padding: 0 2rem;
+  }
+
+  .nita-split-narrative {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .nita-split-badge {
+    justify-content: center;
+  }
+
+  .nita-split-heading {
+    font-size: clamp(2.5rem, 7vw, 3.7rem);
+  }
+
+  .nita-split-text {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nita-split-ethos {
+    justify-content: center;
+  }
+
+  .nita-split-actions {
+    justify-content: center;
+  }
+
+  .nita-split-sculpture {
+    width: 100%;
+  }
+
+  .nita-sculpture-wrapper {
+    width: 340px;
+    height: 340px;
+  }
+
+  .nita-portal-lens {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  #nita-about-split-hero {
+    width: 100%;
+    min-height: auto;
+    padding: 9rem 0 4rem;
+    overflow: hidden;
+  }
+
+  #nita-about-split-hero * {
+    max-width: 100%;
+  }
+
+  .nita-split-container {
+    width: 100%;
+    padding: 0 1.1rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  /* ---------- Text Section ---------- */
+
+  .nita-split-narrative {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nita-split-reveal {
+    margin-bottom: 1rem;
+  }
+
+  .nita-split-badge {
+    display: inline-flex;
+    max-width: 100%;
+    padding: 0.4rem 0.8rem;
+    gap: 0.4rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nita-split-psi {
+    font-size: 1rem;
+  }
+
+  .nita-split-heading {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+    line-height: 1.12;
+    margin: 0;
+  }
+
+  .nita-split-heading em {
+    display: inline;
+  }
+
+  .nita-split-text {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin-top: 0;
+  }
+
+
+  /* ---------- Ethos ---------- */
+
+  .nita-split-ethos {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .nita-ethos-item {
+    width: 100%;
+  }
+
+  .nita-ethos-item strong {
+    font-size: 0.88rem;
+  }
+
+  .nita-ethos-item span {
+    font-size: 0.76rem;
+  }
+
+  .nita-ethos-divider {
+    display: none;
+  }
+
+
+  /* ---------- Buttons ---------- */
+
+  .nita-split-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+  }
+
+  .nita-split-btn-dark,
+  .nita-split-btn-ghost {
+    width: 100%;
+    min-height: 50px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nita-split-btn-dark {
+    padding: 0.85rem 1.2rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+  }
+
+  .nita-split-btn-ghost {
+    font-size: 0.9rem;
+  }
+
+
+  /* =====================================================
+     CIRCLE / PORTAL
+  ===================================================== */
+
+  .nita-split-sculpture {
+    width: 100%;
+    min-height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .nita-sculpture-wrapper {
+    width: 280px;
+    height: 280px;
+  }
+
+  .nita-optical-ring {
+    inset: -12px;
+  }
+
+  .nita-optical-ring-inner {
+    inset: 7px;
+  }
+
+  .nita-portal-lens {
+    width: 225px;
+    height: 225px;
+    border-width: 3px;
+  }
+
+
+  /* ---------- Portal Content ---------- */
+
+  .nita-portal-glass-overlay {
+    padding: 1rem;
+  }
+
+  .nita-portal-logo-wrap {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.3rem;
+  }
+
+  .nita-fallback-psi {
+    font-size: 1.3rem;
+  }
+
+  .nita-portal-tag {
+    font-size: 0.6rem;
+    letter-spacing: 0.13em;
+  }
+
+  .nita-portal-title {
+    font-size: 1.5rem;
+    letter-spacing: 0.04em;
+  }
+
+  .nita-portal-sub {
+    font-size: 0.72rem;
+    margin: 0.15rem 0 0.7rem;
+  }
+
+  .nita-portal-pulse-pill {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.55rem;
+  }
+
+
+  /* =====================================================
+     FLOATING BADGES
+  ===================================================== */
+
+  .nita-float-badge {
+    position: absolute;
+    width: auto;
+    max-width: 140px;
+    padding: 0.55rem 0.7rem;
+    border-radius: 11px;
+    gap: 0.45rem;
+  }
+
+  .float-top-right {
+    top: -5px;
+    right: -5px;
+  }
+
+  .float-bottom-left {
+    bottom: -5px;
+    left: -5px;
+  }
+
+  .nita-float-icon {
+    font-size: 0.95rem;
+  }
+
+  .nita-float-badge strong {
+    font-size: 0.72rem;
+  }
+
+  .nita-float-badge span {
+    font-size: 0.62rem;
+  }
+
+
+  /* ---------- Background Orbs ---------- */
+
+  .orb-1 {
+    width: 320px;
+    height: 320px;
+    filter: blur(90px);
+  }
+
+  .orb-2 {
+    width: 350px;
+    height: 350px;
+    filter: blur(90px);
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  #nita-about-split-hero {
+    padding: 3rem 0 3.5rem;
+  }
+
+  .nita-split-container {
+    padding: 0 0.85rem;
+    gap: 3rem;
+  }
+
+  .nita-split-heading {
+    font-size: 1.9rem;
+  }
+
+  .nita-split-text {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  .nita-split-badge {
+    font-size: 0.62rem;
+    padding: 0.35rem 0.65rem;
+  }
+
+  .nita-sculpture-wrapper {
+    width: 245px;
+    height: 245px;
+  }
+
+  .nita-portal-lens {
+    width: 200px;
+    height: 200px;
+  }
+
+  .nita-portal-title {
+    font-size: 1.35rem;
+  }
+
+  .nita-portal-sub {
+    font-size: 0.65rem;
+  }
+
+  .nita-float-badge {
+    max-width: 115px;
+    padding: 0.45rem 0.55rem;
+  }
+
+  .nita-float-badge strong {
+    font-size: 0.65rem;
+  }
+
+  .nita-float-badge span {
+    font-size: 0.56rem;
+  }
+
+  .float-top-right {
+    right: -8px;
+  }
+
+  .float-bottom-left {
+    left: -8px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 320px) {
+
+  .nita-split-container {
+    padding: 0 0.7rem;
+  }
+
+  .nita-split-heading {
+    font-size: 1.7rem;
+  }
+
+  .nita-split-text {
+    font-size: 0.88rem;
+  }
+
+  .nita-sculpture-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+
+  .nita-portal-lens {
+    width: 180px;
+    height: 180px;
+  }
+
+  .nita-portal-title {
+    font-size: 1.2rem;
+  }
+
+  .nita-portal-sub {
+    display: none;
+  }
+
+  .nita-float-badge {
+    max-width: 100px;
+  }
+
+  .nita-float-badge span {
+    display: none;
+  }
+}
+
+
+/* Section 1 Starts */
+/* ===================================================
+   SHARED UNIVERSAL SCROLL REVEAL CLASS
+   =================================================== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================================================
+   ABOUT US - SECTION 2: MISSION & VISION STYLES
+   =================================================== */
+#nita-mission-vision-section {
+  position: relative;
+  width: 100%;
+  padding: 6.5rem 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f4f9fd 0%, #edf6ff 50%, #f8fafc 100%);
+  color: #0f172a;
+  font-family: "Times New Roman", Times, Georgia, serif;
+}
+
+#nita-mission-vision-section * {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, serif !important;
+}
+
+/* Ambient Glow Orbs */
+.nita-mv-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 1;
+}
+
+.mv-orb-left {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #bae6fd, transparent 70%);
+  top: 10%;
+  left: -8%;
+}
+
+.mv-orb-right {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #c7d2fe, transparent 70%);
+  bottom: 5%;
+  right: -5%;
+}
+
+/* Container & Header */
+.nita-mv-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.nita-mv-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 4rem auto;
+}
+
+.nita-mv-kicker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0284c7;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+}
+
+.nita-mv-dot {
+  width: 7px;
+  height: 7px;
+  background: #0284c7;
+  border-radius: 50%;
+}
+
+.nita-mv-title {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  line-height: 1.15;
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0 0 1.2rem 0;
+}
+
+.nita-mv-title em {
+  font-style: italic;
+  color: #0369a1;
+}
+
+.nita-mv-subtitle {
+  font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+  line-height: 1.75;
+  color: #475569;
+  margin: 0 auto;
+}
+
+/* 2-Column Bento Grid */
+.nita-mv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* Mission & Vision Cards */
+.nita-mv-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(2, 132, 199, 0.18);
+  border-radius: 22px;
+  padding: 2.6rem 2.4rem;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03), 0 14px 32px -6px rgba(2, 132, 199, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nita-mv-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(2, 132, 199, 0.45);
+  box-shadow: 0 20px 45px -6px rgba(2, 132, 199, 0.16), 0 6px 14px rgba(15, 23, 42, 0.04);
+}
+
+.nita-mv-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.nita-mv-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #f0f9ff;
+  border: 1px solid #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.nita-mv-card:hover .nita-mv-icon-box {
+  background: #ffffff;
+  transform: scale(1.08);
+}
+
+.nita-mv-badge {
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0284c7;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.nita-mv-card-title {
+  font-size: 1.55rem;
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0 0 1rem 0;
+  line-height: 1.25;
+}
+
+.nita-mv-text {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #334155;
+  margin: 0 0 1rem 0;
+}
+
+.nita-mv-text.secondary-text {
+  color: #475569;
+  margin-bottom: 1.8rem;
+}
+
+/* Checklist / Action Pillars */
+.nita-mv-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.nita-check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.94rem;
+  color: #1e293b;
+}
+
+.nita-check-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e0f2fe;
+  color: #0284c7;
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Bottom Reassurance Banner */
+.nita-mv-banner {
+  background: #ffffff;
+  border: 1px solid rgba(2, 132, 199, 0.22);
+  border-radius: 22px;
+  padding: 2.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 16px 36px -4px rgba(2, 132, 199, 0.1), 0 4px 10px rgba(15, 23, 42, 0.02);
+}
+
+.nita-banner-tag {
+  display: inline-block;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0284c7;
+  font-weight: bold;
+  margin-bottom: 0.35rem;
+}
+
+.nita-mv-banner-content h3 {
+  font-size: 1.65rem;
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0 0 0.35rem 0;
+}
+
+.nita-mv-banner-content p {
+  font-size: 1.02rem;
+  color: #475569;
+  margin: 0;
+}
+
+.nita-mv-banner-actions {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.nita-serv-btn-primary,
+.nita-serv-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.8rem;
+  text-decoration: none;
+  font-size: 0.92rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.nita-serv-btn-primary {
+  background: #0f172a;
+  color: #ffffff;
+  border: 1px solid #0f172a;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.nita-serv-btn-primary:hover {
+  background: #0284c7;
+  border-color: #0284c7;
+  transform: translateY(-2px);
+}
+
+.nita-serv-btn-secondary {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.25);
+}
+
+.nita-serv-btn-secondary:hover {
+  background: #ffffff;
+  border-color: #0f172a;
+  transform: translateY(-2px);
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .nita-mv-grid {
+    grid-template-columns: 1fr;
+  }
+  .nita-mv-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  .nita-mv-banner-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .nita-mv-banner-actions a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .nita-mv-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Section 1 ENds */
+
+/* Section 2 Starst */
+
+/* ===================================================
+   ABOUT US - SECTION 3: WHAT WE DO STYLES
+   =================================================== */
+#nita-what-we-do-section {
+  position: relative;
+  width: 100%;
+  padding: 6.5rem 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef6fe 50%, #f4f9fd 100%);
+  color: #0f172a;
+  font-family: "Times New Roman", Times, Georgia, serif;
+}
+
+#nita-what-we-do-section * {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, serif !important;
+}
+
+/* Ambient Glow Orbs */
+.nita-wwd-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.wwd-orb-left {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #bae6fd, transparent 70%);
+  top: 10%;
+  left: -8%;
+}
+
+.wwd-orb-right {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #c7d2fe, transparent 70%);
+  bottom: 5%;
+  right: -5%;
+}
+
+/* Container & Header */
+.nita-wwd-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.nita-wwd-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 3rem auto;
+}
+
+.nita-wwd-kicker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0284c7;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+}
+
+.nita-wwd-dot {
+  width: 7px;
+  height: 7px;
+  background: #0284c7;
+  border-radius: 50%;
+}
+
+.nita-wwd-title {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  line-height: 1.15;
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0 0 1.2rem 0;
+}
+
+.nita-wwd-intro {
+  font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+  line-height: 1.75;
+  color: #334155;
+  margin: 0 auto;
+}
+
+/* Subhead */
+.nita-wwd-subhead {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.nita-wwd-subhead h3 {
+  font-size: 1.45rem;
+  font-weight: normal;
+  font-style: italic;
+  color: #0369a1;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* 9-Card Bento Grid */
+.nita-wwd-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Card Design */
+.nita-wwd-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(2, 132, 199, 0.16);
+  border-radius: 20px;
+  padding: 1.8rem 1.6rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03), 0 12px 28px -4px rgba(2, 132, 199, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nita-wwd-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(2, 132, 199, 0.4);
+  box-shadow: 0 20px 40px -6px rgba(2, 132, 199, 0.14), 0 6px 14px rgba(15, 23, 42, 0.04);
+}
+
+.nita-wwd-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.nita-wwd-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #f0f9ff;
+  border: 1px solid #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.nita-wwd-card:hover .nita-wwd-icon-box {
+  background: #ffffff;
+  transform: scale(1.08);
+}
+
+.nita-wwd-num {
+  font-size: 0.92rem;
+  font-weight: bold;
+  color: #bae6fd;
+  letter-spacing: 0.08em;
+}
+
+.nita-wwd-card-title {
+  font-size: 1.24rem;
+  font-weight: bold;
+  color: #0f172a;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* Footer Banner */
+.nita-wwd-footer-banner {
+  background: #ffffff;
+  border: 1px solid rgba(2, 132, 199, 0.22);
+  border-radius: 20px;
+  padding: 2.2rem 2.8rem;
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto;
+  box-shadow: 0 16px 36px -4px rgba(2, 132, 199, 0.1), 0 4px 10px rgba(15, 23, 42, 0.02);
+}
+
+.nita-wwd-banner-badge {
+  display: inline-block;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0284c7;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.nita-wwd-closing-text {
+  font-size: clamp(1.08rem, 1.4vw, 1.25rem);
+  line-height: 1.7;
+  color: #0f172a;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .nita-wwd-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .nita-wwd-grid {
+    grid-template-columns: 1fr;
+  }
+  .nita-wwd-footer-banner {
+    padding: 1.8rem 1.4rem;
+  }
+}
+
+/* Section 2 ENds */
+
+
+/* Section 3 Starts */
+
+/* ===================================================
+   ABOUT US - SECTION 4: OUR APPROACH STYLES
+   =================================================== */
+#nita-approach-section {
+  position: relative;
+  width: 100%;
+  padding: 6.5rem 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f4f9fd 0%, #edf6ff 50%, #f8fafc 100%);
+  color: #0f172a;
+  font-family: "Times New Roman", Times, Georgia, serif;
+}
+
+#nita-approach-section * {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, serif !important;
+}
+
+/* Ambient Glow Orbs */
+.nita-app-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.app-orb-left {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #bae6fd, transparent 70%);
+  top: 10%;
+  left: -8%;
+}
+
+.app-orb-right {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #c7d2fe, transparent 70%);
+  bottom: 5%;
+  right: -5%;
+}
+
+/* Container & Header */
+.nita-app-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.nita-app-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 3rem auto;
+}
+
+.nita-app-kicker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0284c7;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+}
+
+.nita-app-dot {
+  width: 7px;
+  height: 7px;
+  background: #0284c7;
+  border-radius: 50%;
+}
+
+.nita-app-title {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  line-height: 1.15;
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0 0 1.2rem 0;
+}
+
+.nita-app-intro {
+  font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+  line-height: 1.75;
+  color: #334155;
+  margin: 0 auto;
+}
+
+/* Subhead */
+.nita-app-subhead {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.nita-app-subhead h3 {
+  font-size: 1.45rem;
+  font-weight: normal;
+  font-style: italic;
+  color: #0369a1;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* 4-Card 2x2 Bento Grid */
+.nita-app-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+}
+
+/* Card Design */
+.nita-app-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(2, 132, 199, 0.16);
+  border-radius: 20px;
+  padding: 2.2rem 2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03), 0 12px 28px -4px rgba(2, 132, 199, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nita-app-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(2, 132, 199, 0.4);
+  box-shadow: 0 20px 40px -6px rgba(2, 132, 199, 0.14), 0 6px 14px rgba(15, 23, 42, 0.04);
+}
+
+.nita-app-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.3rem;
+}
+
+.nita-app-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #f0f9ff;
+  border: 1px solid #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.nita-app-card:hover .nita-app-icon-box {
+  background: #ffffff;
+  transform: scale(1.08);
+}
+
+.nita-app-num {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #bae6fd;
+  letter-spacing: 0.08em;
+}
+
+.nita-app-card-title {
+  font-size: 1.38rem;
+  font-weight: bold;
+  color: #0f172a;
+  line-height: 1.25;
+  margin: 0 0 0.6rem 0;
+}
+
+.nita-app-card-desc {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .nita-app-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .nita-app-card {
+    padding: 1.8rem 1.4rem;
+  }
+}
+
+/* Section 3 Ends */
+
+
+/* Section 4 Starst */
+
+/* ===================================================
+   ABOUT US - SECTION 5: MENTAL HEALTH EDUCATION STYLES
+   =================================================== */
+#nita-community-awareness-section {
+  position: relative;
+  width: 100%;
+  padding: 6.5rem 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef6fe 50%, #f4f9fd 100%);
+  color: #0f172a;
+  font-family: "Times New Roman", Times, Georgia, serif;
+}
+
+#nita-community-awareness-section * {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, serif !important;
+}
+
+/* Ambient Glow Orbs */
+.nita-edu-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.edu-orb-left {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #bae6fd, transparent 70%);
+  top: 10%;
+  left: -8%;
+}
+
+.edu-orb-right {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #c7d2fe, transparent 70%);
+  bottom: 5%;
+  right: -5%;
+}
+
+/* Container & Header */
+.nita-edu-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.nita-edu-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.nita-edu-kicker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0284c7;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+}
+
+.nita-edu-dot {
+  width: 7px;
+  height: 7px;
+  background: #0284c7;
+  border-radius: 50%;
+}
+
+.nita-edu-title {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  line-height: 1.15;
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0 0 1.2rem 0;
+}
+
+.nita-edu-intro {
+  font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+  line-height: 1.75;
+  color: #334155;
+  margin: 0 auto;
+}
+
+/* 2-Column Split Layout */
+.nita-edu-split-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+/* Left Card: Lead Narrative & Belief Box */
+.nita-edu-lead-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(2, 132, 199, 0.16);
+  border-radius: 22px;
+  padding: 2.5rem 2.2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03), 0 12px 28px -4px rgba(2, 132, 199, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nita-edu-lead-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(2, 132, 199, 0.4);
+  box-shadow: 0 20px 40px -6px rgba(2, 132, 199, 0.14);
+}
+
+.nita-edu-card-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0284c7;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+}
+
+.nita-edu-main-text {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #334155;
+  margin: 0 0 1.8rem 0;
+}
+
+.nita-edu-belief-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 16px;
+  padding: 1.4rem 1.5rem;
+}
+
+.nita-belief-icon {
+  font-size: 1.8rem;
+  color: #0284c7;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.nita-belief-quote {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #0f172a;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Right Card: Topics Covered Grid */
+.nita-edu-topics-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(2, 132, 199, 0.16);
+  border-radius: 22px;
+  padding: 2.5rem 2.2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03), 0 12px 28px -4px rgba(2, 132, 199, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nita-edu-topics-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(2, 132, 199, 0.4);
+  box-shadow: 0 20px 40px -6px rgba(2, 132, 199, 0.14);
+}
+
+.nita-topics-heading {
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #0f172a;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.25;
+}
+
+.nita-topics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+
+.nita-topic-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.nita-topic-pill:hover {
+  background: #f0f9ff;
+  border-color: #bae6fd;
+  transform: translateX(3px);
+}
+
+.nita-topic-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e0f2fe;
+  color: #0284c7;
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nita-topic-pill span {
+  font-size: 0.9rem;
+  color: #1e293b;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.nita-topic-pill.highlight-topic {
+  grid-column: span 2;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.nita-topic-pill.highlight-topic .nita-topic-icon {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.nita-topic-pill.highlight-topic span {
+  color: #166534;
+  font-style: italic;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .nita-edu-split-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .nita-edu-lead-card,
+  .nita-edu-topics-card {
+    padding: 1.8rem 1.4rem;
+  }
+  .nita-topics-grid {
+    grid-template-columns: 1fr;
+  }
+  .nita-topic-pill.highlight-topic {
+    grid-column: span 1;
+  }
+}
+
+/* Section 4 Ends */
+
+
+/* SEction 5 Starst */
+
+/* ===================================================
+   ABOUT US - SECTION 6: WHY CHOOSE STYLES
+   =================================================== */
+#nita-about-why-choose-section {
+  position: relative;
+  width: 100%;
+  padding: 6.5rem 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f4f9fd 0%, #edf6ff 50%, #f8fafc 100%);
+  color: #0f172a;
+  font-family: "Times New Roman", Times, Georgia, serif;
+}
+
+#nita-about-why-choose-section * {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, serif !important;
+}
+
+/* Ambient Glow Orbs */
+.nita-awc-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.awc-orb-left {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #bae6fd, transparent 70%);
+  top: 10%;
+  left: -8%;
+}
+
+.awc-orb-right {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #c7d2fe, transparent 70%);
+  bottom: 5%;
+  right: -5%;
+}
+
+/* Container & Header */
+.nita-awc-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.nita-awc-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.nita-awc-kicker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0284c7;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+}
+
+.nita-awc-dot {
+  width: 7px;
+  height: 7px;
+  background: #0284c7;
+  border-radius: 50%;
+}
+
+.nita-awc-title {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  line-height: 1.15;
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0;
+}
+
+/* 4-Card 2x2 Bento Grid */
+.nita-awc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+}
+
+/* Card Design */
+.nita-awc-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(2, 132, 199, 0.16);
+  border-radius: 20px;
+  padding: 2.2rem 2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03), 0 12px 28px -4px rgba(2, 132, 199, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nita-awc-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(2, 132, 199, 0.4);
+  box-shadow: 0 20px 40px -6px rgba(2, 132, 199, 0.14), 0 6px 14px rgba(15, 23, 42, 0.04);
+}
+
+.nita-awc-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.3rem;
+}
+
+.nita-awc-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #f0f9ff;
+  border: 1px solid #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.nita-awc-card:hover .nita-awc-icon-box {
+  background: #ffffff;
+  transform: scale(1.08);
+}
+
+.nita-awc-num {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #bae6fd;
+  letter-spacing: 0.08em;
+}
+
+.nita-awc-card-title {
+  font-size: 1.38rem;
+  font-weight: bold;
+  color: #0f172a;
+  line-height: 1.25;
+  margin: 0 0 0.6rem 0;
+}
+
+.nita-awc-card-desc {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .nita-awc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .nita-awc-card {
+    padding: 1.8rem 1.4rem;
+  }
+}
+
+/* Serction 5 Ends */
+
+
+/* Section 6 Starts */
+
+/* ===================================================
+   ABOUT US - SECTION 7: OUR COMMITMENT STYLES
+   =================================================== */
+#nita-about-commitment-section {
+  position: relative;
+  width: 100%;
+  padding: 6.5rem 0 8rem 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8fafc 0%, #edf6ff 50%, #f4f9fd 100%);
+  color: #0f172a;
+  font-family: "Times New Roman", Times, Georgia, serif;
+}
+
+#nita-about-commitment-section * {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, serif !important;
+}
+
+/* Ambient Glow Orbs */
+.nita-com-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 1;
+}
+
+.com-orb-left {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #bae6fd, transparent 70%);
+  top: 10%;
+  left: -8%;
+}
+
+.com-orb-right {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #c7d2fe, transparent 70%);
+  bottom: 0%;
+  right: -5%;
+}
+
+/* Layout Container */
+.nita-com-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Central Card */
+.nita-com-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(2, 132, 199, 0.22);
+  border-radius: 28px;
+  padding: 4rem 3.5rem;
+  text-align: center;
+  backdrop-filter: blur(16px);
+  box-shadow: 
+    0 20px 45px -8px rgba(2, 132, 199, 0.12),
+    0 6px 16px rgba(15, 23, 42, 0.03);
+}
+
+.nita-com-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(240, 249, 255, 0.9);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0284c7;
+  margin-bottom: 1.5rem;
+}
+
+.nita-com-dot {
+  width: 7px;
+  height: 7px;
+  background: #0284c7;
+  border-radius: 50%;
+}
+
+.nita-com-title {
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  line-height: 1.15;
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0 auto 1.4rem auto;
+}
+
+.nita-com-desc {
+  font-size: clamp(1.08rem, 1.4vw, 1.25rem);
+  line-height: 1.8;
+  color: #334155;
+  max-width: 880px;
+  margin: 0 auto 1.2rem auto;
+}
+
+.nita-com-sub {
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  line-height: 1.7;
+  color: #0369a1;
+  font-style: italic;
+  max-width: 820px;
+  margin: 0 auto 2.8rem auto;
+}
+
+/* Identity Strip */
+.nita-com-identity-box {
+  background: linear-gradient(145deg, #f0f9ff 0%, #ffffff 100%);
+  border: 1px solid rgba(2, 132, 199, 0.22);
+  border-radius: 20px;
+  padding: 2.2rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  text-align: left;
+}
+
+.nita-com-brand {
+  font-size: 1.45rem;
+  font-weight: bold;
+  color: #0f172a;
+  margin: 0 0 0.35rem 0;
+  letter-spacing: 0.02em;
+}
+
+.nita-com-service {
+  font-size: 1rem;
+  color: #475569;
+  margin: 0 0 0.5rem 0;
+}
+
+.nita-com-location {
+  display: inline-block;
+  font-size: 0.95rem;
+  color: #0284c7;
+  font-weight: bold;
+}
+
+.nita-com-cta-block {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.nita-com-slogan {
+  font-size: 1.15rem;
+  font-weight: normal;
+  font-style: italic;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.4;
+  max-width: 320px;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .nita-com-card {
+    padding: 3rem 2rem;
+  }
+  .nita-com-identity-box {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .nita-com-cta-block {
+    text-align: center;
+  }
+  .nita-com-slogan {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .nita-com-card {
+    padding: 2.2rem 1.4rem;
+    border-radius: 20px;
+  }
+}
+
+/* Section 6 ENds */
+
+
+
+/* Clinical Photo section  */
+
+
+
+/* --- Global Container & Section Defaults --- */
+#nita-clinic-gallery-section {
+  position: relative;
+  background-color: #f7faff;
+  padding: 100px 24px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+}
+
+.nita-clinic-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Ambient Light Orbs --- */
+.nita-clinic-glow-orb {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.clinic-orb-left {
+  top: -80px;
+  left: -120px;
+  background: radial-gradient(circle, #bae6fd 0%, transparent 70%);
+}
+
+.clinic-orb-right {
+  bottom: -80px;
+  right: -120px;
+  background: radial-gradient(circle, #dbeafe 0%, transparent 70%);
+}
+
+/* --- Header & Typography --- */
+.nita-clinic-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 60px auto;
+}
+
+.nita-clinic-kicker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  margin-bottom: 20px;
+  border: 1px solid #bae6fd;
+}
+
+.nita-clinic-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #0284c7;
+  border-radius: 50%;
+}
+
+.nita-clinic-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.nita-clinic-title em {
+  font-style: italic;
+  font-family: Georgia, serif;
+  font-weight: 400;
+  color: #0284c7;
+}
+
+.nita-clinic-subtitle {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.65;
+}
+
+/* --- 2-Column Photo Bento Grid --- */
+.nita-clinic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.nita-clinic-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px -5px rgba(2, 132, 199, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.nita-clinic-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -10px rgba(2, 132, 199, 0.12);
+}
+
+.nita-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+}
+
+.nita-clinic-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nita-clinic-card:hover .nita-clinic-img {
+  transform: scale(1.05);
+}
+
+/* --- Gradient Overlay & Text --- */
+.nita-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg, 
+    rgba(15, 23, 42, 0.05) 0%, 
+    rgba(15, 23, 42, 0.4) 50%, 
+    rgba(15, 23, 42, 0.85) 100%
+  );
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.nita-badge-pill {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+}
+
+.nita-overlay-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+}
+
+.nita-overlay-desc {
+  font-size: 0.92rem;
+  color: #e2e8f0;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* --- Scroll Reveal Logic --- */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+  .nita-clinic-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nita-image-wrapper {
+    height: 320px;
+  }
+
+  .nita-clinic-title {
+    font-size: 2.1rem;
+  }
+}
+
+/* --- Global Container & Section Defaults --- */
+#nita-clinic-gallery-section {
+  position: relative;
+  background-color: #f7faff;
+  padding: 100px 24px;
+  font-family: 'Times New Roman', Times, serif;
+  overflow: hidden;
+}
+
+.nita-clinic-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* --- Ambient Light Orbs --- */
+.nita-clinic-glow-orb {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.clinic-orb-left {
+  top: -80px;
+  left: -120px;
+  background: radial-gradient(circle, #bae6fd 0%, transparent 70%);
+}
+
+.clinic-orb-right {
+  bottom: -80px;
+  right: -120px;
+  background: radial-gradient(circle, #dbeafe 0%, transparent 70%);
+}
+
+/* --- Header & Typography --- */
+.nita-clinic-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 60px auto;
+}
+
+.nita-clinic-kicker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  margin-bottom: 20px;
+  border: 1px solid #bae6fd;
+}
+
+.nita-clinic-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #0284c7;
+  border-radius: 50%;
+}
+
+.nita-clinic-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.nita-clinic-title em {
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 400;
+  color: #0284c7;
+}
+
+.nita-clinic-subtitle {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.15rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* --- 2-Column Photo Bento Grid --- */
+.nita-clinic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.nita-clinic-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px -5px rgba(2, 132, 199, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.nita-clinic-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -10px rgba(2, 132, 199, 0.12);
+}
+
+.nita-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+}
+
+.nita-clinic-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nita-clinic-card:hover .nita-clinic-img {
+  transform: scale(1.05);
+}
+
+/* --- Gradient Overlay & Text --- */
+.nita-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg, 
+    rgba(15, 23, 42, 0.05) 0%, 
+    rgba(15, 23, 42, 0.4) 45%, 
+    rgba(15, 23, 42, 0.9) 100%
+  );
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #ffffff;
+  z-index: 2;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.nita-badge-pill {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+}
+
+.nita-overlay-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+}
+
+.nita-overlay-desc {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.05rem;
+  color: #f1f5f9;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* --- Scroll Reveal Logic --- */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+  .nita-clinic-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nita-image-wrapper {
+    height: 320px;
+  }
+
+  .nita-clinic-title {
+    font-size: 2.2rem;
+  }
+}

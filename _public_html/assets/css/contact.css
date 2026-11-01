@@ -1,0 +1,2451 @@
+/* ===================================================
+   CONTACT US PAGE - CINEMATIC RIPPLE HERO STYLES
+   =================================================== */
+#nita-ripple-contact-hero {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 75px);
+  overflow: hidden;
+  background: linear-gradient(145deg, #f8fafc 0%, #edf6ff 50%, #f1f8fe 100%);
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Times New Roman", Times, Georgia, serif;
+  padding: 5.5rem 0 4.5rem 0;
+}
+
+#nita-ripple-contact-hero * {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, serif !important;
+}
+
+/* Background Crossfade Engine */
+.nita-ripple-bg-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.nita-ripple-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 2.5s ease-in-out, transform 9s ease-out;
+}
+
+.nita-ripple-slide.active {
+  opacity: 0.52;
+  transform: scale(1);
+}
+
+/* Soft Scrim */
+.nita-ripple-scrim {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(240, 248, 255, 0.15) 0%,
+    rgba(224, 242, 254, 0.14) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Live Ripple Pulse Rings */
+.nita-ripple-pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(2, 132, 199, 0.3);
+  pointer-events: none;
+  z-index: 2;
+  animation: nitaRippleExpand 6s infinite cubic-bezier(0.1, 0.8, 0.3, 1);
+}
+
+.ring-1 { width: 300px; height: 300px; animation-delay: 0s; }
+.ring-2 { width: 600px; height: 600px; animation-delay: 2s; }
+.ring-3 { width: 900px; height: 900px; animation-delay: 4s; }
+
+@keyframes nitaRippleExpand {
+  0% {
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* HD Interactive Synapse Canvas */
+#nita-ripple-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: auto;
+}
+
+/* Container */
+.nita-ripple-container {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Kicker */
+.nita-ripple-top-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.86rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #0284c7;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  padding: 0.35rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.4rem;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+}
+
+.nita-ripple-psi {
+  font-size: 1.15rem;
+  color: #0284c7;
+}
+
+/* Header */
+.nita-ripple-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.nita-ripple-title {
+  font-size: clamp(2.4rem, 4.4vw, 4rem);
+  line-height: 1.12;
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0 0 1rem 0;
+}
+
+.nita-ripple-title em {
+  font-style: italic;
+  color: #0369a1;
+}
+
+.nita-ripple-lead {
+  font-size: clamp(1.05rem, 1.35vw, 1.24rem);
+  line-height: 1.75;
+  color: #334155;
+  margin: 0 auto;
+}
+
+/* Carousel Stage */
+.nita-ripple-carousel-stage {
+  width: 100%;
+  max-width: 840px;
+  position: relative;
+  min-height: 280px;
+  margin-bottom: 2rem;
+}
+
+.nita-rcard-panel {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(15px) scale(0.98);
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nita-rcard-panel.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.nita-rcard-glass {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(2, 132, 199, 0.28);
+  border-radius: 26px;
+  padding: 2.8rem 3rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 45px -8px rgba(2, 132, 199, 0.15);
+  text-align: center;
+}
+
+.nita-rcard-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.nita-rcard-tag {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0284c7;
+  font-weight: bold;
+}
+
+.nita-rcard-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.nita-live-dot {
+  width: 6px;
+  height: 6px;
+  background: #16a34a;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #16a34a;
+}
+
+.nita-rcard-heading {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0 0 0.8rem 0;
+  line-height: 1.2;
+}
+
+.nita-rcard-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #475569;
+  margin: 0 auto 2rem auto;
+  max-width: 680px;
+}
+
+.nita-rcard-action-row {
+  display: flex;
+  justify-content: center;
+}
+
+.nita-rcard-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.4rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.nita-rcard-btn.primary {
+  background: #0f172a;
+  color: #ffffff;
+  border: 1px solid #0f172a;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+}
+
+.nita-rcard-btn.primary:hover {
+  background: #0284c7;
+  border-color: #0284c7;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.3);
+}
+
+.nita-rcard-btn.secondary {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.2);
+}
+
+.nita-rcard-btn.secondary:hover {
+  border-color: #0f172a;
+  transform: translateY(-2px);
+}
+
+/* Manual Navigation Dots */
+.nita-ripple-nav-dots {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 2.2rem;
+}
+
+.nita-dot-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid #0284c7;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.nita-dot-btn.active {
+  background: #0284c7;
+  width: 32px;
+  border-radius: 6px;
+}
+
+/* Status Footbar */
+.nita-ripple-footbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(2, 132, 199, 0.22);
+  border-radius: 999px;
+  padding: 0.75rem 2rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+}
+
+.nita-ripple-foot-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.92rem;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.nita-dot-sm {
+  width: 6px;
+  height: 6px;
+  background: #0284c7;
+  border-radius: 50%;
+}
+
+.nita-ripple-foot-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(2, 132, 199, 0.25);
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+  .nita-rcard-glass {
+    padding: 2rem 1.4rem;
+  }
+  .nita-ripple-carousel-stage {
+    min-height: 320px;
+  }
+  .nita-ripple-footbar {
+    border-radius: 20px;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1.2rem;
+  }
+  .nita-ripple-foot-divider {
+    display: none;
+  }
+}
+
+
+/* Section 1 Starts */
+
+/* ===================================================
+   CONTACT US PAGE - SECTION 2 (RIBBON DESIGN)
+   =================================================== */
+#nita-contact-intro-section {
+  position: relative;
+  width: 100%;
+  padding: 6.5rem 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8fafc 0%, #edf6ff 50%, #f4f9fd 100%);
+  color: #0f172a;
+  font-family: "Times New Roman", Times, Georgia, serif;
+}
+
+#nita-contact-intro-section * {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, serif !important;
+}
+
+/* Ambient Glow Halos */
+.nita-ribbon-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 1;
+}
+
+.glow-top-left {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #bae6fd, transparent 70%);
+  top: 5%;
+  left: -10%;
+}
+
+.glow-bottom-right {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #c7d2fe, transparent 70%);
+  bottom: 0%;
+  right: -8%;
+}
+
+/* Container */
+.nita-ribbon-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Layered Showcase Card */
+.nita-ribbon-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(2, 132, 199, 0.22);
+  border-radius: 28px;
+  padding: 3.5rem 3.2rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 
+    0 20px 45px -8px rgba(2, 132, 199, 0.12),
+    0 4px 14px rgba(15, 23, 42, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nita-ribbon-card:hover {
+  box-shadow: 
+    0 24px 50px -8px rgba(2, 132, 199, 0.16),
+    0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+/* Header */
+.nita-ribbon-header {
+  text-align: center;
+  margin-bottom: 2.8rem;
+}
+
+.nita-ribbon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 0.35rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0284c7;
+  margin-bottom: 1.2rem;
+}
+
+.nita-ribbon-pulse {
+  width: 7px;
+  height: 7px;
+  background: #0284c7;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #0284c7;
+}
+
+.nita-ribbon-title {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  line-height: 1.15;
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0;
+}
+
+.nita-ribbon-title em {
+  font-style: italic;
+  color: #0369a1;
+}
+
+/* Split Body Grid */
+.nita-ribbon-body-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Left: Statement Box with Accent Bar */
+.nita-statement-box {
+  display: flex;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.nita-statement-box:hover {
+  border-color: #bae6fd;
+  transform: translateY(-2px);
+}
+
+.nita-accent-bar {
+  width: 7px;
+  background: linear-gradient(180deg, #0284c7 0%, #38bdf8 100%);
+  flex-shrink: 0;
+}
+
+.nita-statement-content {
+  padding: 2.2rem 2rem;
+}
+
+.nita-statement-heading {
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #0f172a;
+  margin: 0 0 0.8rem 0;
+  line-height: 1.2;
+}
+
+.nita-statement-lead {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #334155;
+  margin: 0;
+}
+
+/* Right: Action Horizon Box */
+.nita-action-horizon-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.4rem;
+}
+
+.nita-horizon-inner {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 20px;
+  padding: 1.8rem 1.8rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nita-horizon-tag {
+  display: inline-block;
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0284c7;
+  margin-bottom: 0.4rem;
+}
+
+.nita-horizon-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #0369a1;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Quick Service Points Ribbon */
+.nita-quick-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  background: #ffffff;
+  border: 1px solid rgba(2, 132, 199, 0.2);
+  border-radius: 14px;
+  padding: 0.8rem 1.2rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
+}
+
+.nita-ribbon-point {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  font-weight: bold;
+  color: #1e293b;
+}
+
+.nita-point-icon {
+  color: #16a34a;
+  font-size: 0.95rem;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .nita-ribbon-body-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .nita-ribbon-card {
+    padding: 2.2rem 1.4rem;
+    border-radius: 20px;
+  }
+  .nita-statement-content {
+    padding: 1.6rem 1.3rem;
+  }
+  .nita-quick-ribbon {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+}
+
+/* Section 1 ENds */
+
+/* Section 2 Starts */
+
+/* ===================================================
+   CONTACT US PAGE - SECTION 3 STYLES
+   =================================================== */
+#nita-contact-details-section {
+  position: relative;
+  width: 100%;
+  padding: 6.5rem 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f4f9fd 0%, #edf6ff 50%, #f8fafc 100%);
+  color: #0f172a;
+  font-family: "Times New Roman", Times, Georgia, serif;
+}
+
+#nita-contact-details-section * {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, serif !important;
+}
+
+/* Ambient Glow Orbs */
+.nita-dtl-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 1;
+}
+
+.dtl-glow-left {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #bae6fd, transparent 70%);
+  top: 10%;
+  left: -8%;
+}
+
+.dtl-glow-right {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #c7d2fe, transparent 70%);
+  bottom: 5%;
+  right: -5%;
+}
+
+/* Layout Container */
+.nita-dtl-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Header */
+.nita-dtl-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.nita-dtl-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  padding: 0.35rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0284c7;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+}
+
+.nita-dtl-dot {
+  width: 7px;
+  height: 7px;
+  background: #0284c7;
+  border-radius: 50%;
+}
+
+.nita-dtl-title {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  line-height: 1.15;
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0 0 1.2rem 0;
+}
+
+.nita-dtl-lead {
+  font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+  line-height: 1.75;
+  color: #334155;
+  margin: 0 auto;
+}
+
+/* 4-Column Grid */
+.nita-dtl-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Contact Card */
+.nita-dtl-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(2, 132, 199, 0.18);
+  border-radius: 22px;
+  padding: 2.2rem 1.8rem;
+  backdrop-filter: blur(14px);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03), 0 10px 24px -4px rgba(2, 132, 199, 0.06);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nita-dtl-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(2, 132, 199, 0.45);
+  box-shadow: 0 20px 40px -6px rgba(2, 132, 199, 0.16);
+}
+
+.nita-dtl-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.nita-dtl-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #f0f9ff;
+  border: 1px solid #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.nita-dtl-card:hover .nita-dtl-icon-box {
+  background: #ffffff;
+  transform: scale(1.08);
+}
+
+.nita-dtl-card-num {
+  font-size: 0.92rem;
+  font-weight: bold;
+  color: #bae6fd;
+  letter-spacing: 0.08em;
+}
+
+.nita-dtl-tag {
+  display: inline-block;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0284c7;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+.nita-dtl-card-title {
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.25;
+}
+
+.nita-dtl-card-value {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #334155;
+  margin: 0 0 1.5rem 0;
+  word-break: break-word;
+}
+
+.nita-dtl-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  font-size: 0.88rem;
+  font-weight: bold;
+  color: #0284c7;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.nita-action-static {
+  font-size: 0.84rem;
+  color: #475569;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 500;
+}
+
+.nita-dtl-arrow {
+  font-size: 1.15rem;
+  transition: transform 0.25s ease;
+}
+
+.nita-dtl-card:hover .nita-dtl-arrow {
+  transform: translateX(4px);
+}
+
+/* Footer Banner Strip */
+.nita-dtl-footer-banner {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(2, 132, 199, 0.22);
+  border-radius: 20px;
+  padding: 1.6rem 2.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 10px 30px -5px rgba(2, 132, 199, 0.08);
+}
+
+.nita-dtl-brand-pill {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nita-brand-psi {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  color: #0284c7;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nita-dtl-brand-pill strong {
+  display: block;
+  font-size: 1.08rem;
+  color: #0f172a;
+  letter-spacing: 0.02em;
+}
+
+.nita-dtl-brand-pill span {
+  display: block;
+  font-size: 0.86rem;
+  color: #475569;
+}
+
+.nita-dtl-reassurance {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+  color: #0369a1;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.nita-dtl-check {
+  color: #16a34a;
+  font-weight: bold;
+}
+
+/* Responsiveness */
+@media (max-width: 1100px) {
+  .nita-dtl-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nita-dtl-footer-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.2rem;
+  }
+  .nita-dtl-brand-pill {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nita-dtl-reassurance {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 580px) {
+  .nita-dtl-grid {
+    grid-template-columns: 1fr;
+  }
+  .nita-dtl-card {
+    min-height: auto;
+  }
+}
+
+/* Section 2 Ends */
+
+/* Sectionn 3 Starts */
+/* ===================================================
+   CONTACT US PAGE - SECTION 4: CLINIC HOURS STYLES
+   =================================================== */
+#nita-clinic-hours-section {
+  position: relative;
+  width: 100%;
+  padding: 6.5rem 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8fafc 0%, #edf6ff 50%, #f4f9fd 100%);
+  color: #0f172a;
+  font-family: "Times New Roman", Times, Georgia, serif;
+}
+
+#nita-clinic-hours-section * {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, serif !important;
+}
+
+/* Ambient Atmosphere Glows */
+.nita-hrs-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 1;
+}
+
+.glow-left {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #bae6fd, transparent 70%);
+  top: 10%;
+  left: -8%;
+}
+
+.glow-right {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #c7d2fe, transparent 70%);
+  bottom: 5%;
+  right: -5%;
+}
+
+/* Container */
+.nita-hrs-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header */
+.nita-hrs-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.nita-hrs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  padding: 0.35rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0284c7;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+}
+
+.nita-hrs-dot {
+  width: 7px;
+  height: 7px;
+  background: #0284c7;
+  border-radius: 50%;
+}
+
+.nita-hrs-title {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  line-height: 1.15;
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0 0 1.2rem 0;
+}
+
+.nita-hrs-lead {
+  font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+  line-height: 1.75;
+  color: #334155;
+  margin: 0 auto;
+}
+
+/* Master Card */
+.nita-hrs-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(2, 132, 199, 0.22);
+  border-radius: 26px;
+  padding: 3.5rem 3rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 
+    0 20px 45px -8px rgba(2, 132, 199, 0.12),
+    0 4px 14px rgba(15, 23, 42, 0.03);
+}
+
+.nita-hrs-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.nita-hrs-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+.nita-clock-icon {
+  font-size: 1.3rem;
+}
+
+.nita-hrs-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.nita-hrs-pulse-dot {
+  width: 6px;
+  height: 6px;
+  background: #16a34a;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #16a34a;
+}
+
+/* Timetable 2-Column Grid */
+.nita-hrs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.nita-time-block {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.nita-time-block:hover {
+  transform: translateY(-4px);
+  border-color: #bae6fd;
+  box-shadow: 0 12px 28px -4px rgba(2, 132, 199, 0.1);
+}
+
+.nita-time-header {
+  margin-bottom: 1rem;
+}
+
+.nita-time-tag {
+  display: inline-block;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0284c7;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+.tag-special {
+  color: #d97706;
+}
+
+.nita-day-title {
+  font-size: 1.45rem;
+  font-weight: bold;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.nita-time-badge {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  margin: 0.8rem 0 1rem 0;
+}
+
+.badge-appointment {
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.nita-time-value {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #0284c7;
+  letter-spacing: 0.02em;
+}
+
+.badge-appointment .nita-time-value {
+  color: #b45309;
+}
+
+.nita-time-note {
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: #64748b;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Advisory Box */
+.nita-hrs-advisory {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  border-radius: 16px;
+  padding: 1.2rem 1.6rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+}
+
+.nita-advisory-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.nita-advisory-text {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: #1e293b;
+  margin: 0;
+}
+
+.nita-advisory-text strong {
+  color: #0284c7;
+}
+
+/* Responsiveness */
+@media (max-width: 860px) {
+  .nita-hrs-grid {
+    grid-template-columns: 1fr;
+  }
+  .nita-hrs-card {
+    padding: 2.2rem 1.5rem;
+  }
+  .nita-hrs-card-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .nita-hrs-advisory {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+}
+/* Secgtion 3 ENd */
+
+
+/* Section 4 Starts */
+
+/* ===================================================
+   CONTACT US / EDUCATION PAGE - SECTION 5 STYLES
+   =================================================== */
+#nita-edu-classes-section {
+  position: relative;
+  width: 100%;
+  padding: 6.5rem 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f4f9fd 0%, #edf6ff 50%, #f8fafc 100%);
+  color: #0f172a;
+  font-family: "Times New Roman", Times, Georgia, serif;
+}
+
+#nita-edu-classes-section * {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, serif !important;
+}
+
+/* Ambient Halos */
+.nita-cls-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 1;
+}
+
+.cls-glow-left {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #bae6fd, transparent 70%);
+  top: 10%;
+  left: -8%;
+}
+
+.cls-glow-right {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #c7d2fe, transparent 70%);
+  bottom: 5%;
+  right: -5%;
+}
+
+/* Layout Container */
+.nita-cls-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Header */
+.nita-cls-header {
+  text-align: center;
+  max-width: 880px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.nita-cls-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  padding: 0.35rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0284c7;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+}
+
+.nita-cls-dot {
+  width: 7px;
+  height: 7px;
+  background: #0284c7;
+  border-radius: 50%;
+}
+
+.nita-cls-title {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  line-height: 1.15;
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0 0 1.2rem 0;
+}
+
+.nita-cls-lead {
+  font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+  line-height: 1.75;
+  color: #334155;
+  margin: 0 auto;
+}
+
+/* 2-Column Bento Grid */
+.nita-cls-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+  align-items: stretch;
+}
+
+/* Card Styling */
+.nita-cls-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(2, 132, 199, 0.2);
+  border-radius: 24px;
+  padding: 2.6rem 2.4rem;
+  backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03), 0 12px 28px -4px rgba(2, 132, 199, 0.06);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nita-cls-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(2, 132, 199, 0.45);
+  box-shadow: 0 20px 45px -6px rgba(2, 132, 199, 0.15);
+}
+
+.nita-cls-card.student-card {
+  border-color: rgba(5, 150, 105, 0.25);
+}
+
+.nita-cls-card.student-card:hover {
+  border-color: rgba(5, 150, 105, 0.45);
+  box-shadow: 0 20px 45px -6px rgba(5, 150, 105, 0.15);
+}
+
+.nita-cls-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.4rem;
+}
+
+.nita-cls-icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #f0f9ff;
+  border: 1px solid #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.icon-student {
+  background: #f0fdf4;
+  border-color: #dcfce7;
+}
+
+.nita-cls-card:hover .nita-cls-icon-box {
+  transform: scale(1.08);
+}
+
+.nita-cls-tag {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0284c7;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.tag-student {
+  color: #166534;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.nita-cls-card-title {
+  font-size: 1.55rem;
+  font-weight: bold;
+  color: #0f172a;
+  margin: 0 0 0.6rem 0;
+  line-height: 1.25;
+}
+
+.nita-cls-card-desc {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0 0 1.8rem 0;
+}
+
+/* Info Deck */
+.nita-cls-info-deck {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.nita-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 1rem 1.2rem;
+  border-radius: 14px;
+}
+
+.nita-info-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.nita-info-label {
+  display: block;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0284c7;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.nita-info-item strong {
+  display: block;
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+
+.nita-info-item p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0.15rem 0 0 0;
+}
+
+.nita-cls-foot-notice {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+}
+
+.nita-cls-foot-notice p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #0369a1;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Psychology Student Program List */
+.nita-student-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.8rem;
+}
+
+.nita-student-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.nita-student-item:hover {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  transform: translateX(4px);
+}
+
+.nita-item-check {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #16a34a;
+}
+
+.nita-student-item span:last-child {
+  font-size: 0.94rem;
+  color: #1e293b;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.nita-student-cta-box {
+  display: flex;
+}
+
+.nita-student-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #0f172a;
+  color: #ffffff;
+  border: 1px solid #0f172a;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+  transition: all 0.25s ease;
+}
+
+.nita-student-btn:hover {
+  background: #059669;
+  border-color: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(5, 150, 105, 0.25);
+}
+
+/* Bottom Banner */
+.nita-cls-bottom-banner {
+  text-align: center;
+}
+
+.nita-banner-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(2, 132, 199, 0.22);
+  padding: 0.65rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  color: #0f172a;
+  font-weight: bold;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+}
+
+.nita-banner-icon {
+  color: #0284c7;
+  font-size: 1.15rem;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .nita-cls-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .nita-cls-card {
+    padding: 1.8rem 1.4rem;
+  }
+}
+
+/* Section 4 Ends */
+
+
+/* Section 5 Starts */
+
+/* ===================================================
+   CONTACT US PAGE - SECTION 6: CONTACT FORM STYLES
+   =================================================== */
+#contact-form {
+  position: relative;
+  width: 100%;
+  padding: 6.5rem 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8fafc 0%, #edf6ff 50%, #f4f9fd 100%);
+  color: #0f172a;
+  font-family: "Times New Roman", Times, Georgia, serif;
+}
+
+#contact-form * {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, serif !important;
+}
+
+/* Ambient Glow Orbs */
+.nita-frm-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 1;
+}
+
+.frm-glow-left {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #bae6fd, transparent 70%);
+  top: 10%;
+  left: -8%;
+}
+
+.frm-glow-right {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #c7d2fe, transparent 70%);
+  bottom: 5%;
+  right: -5%;
+}
+
+/* Layout Container */
+.nita-frm-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header */
+.nita-frm-header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.nita-frm-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  padding: 0.35rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0284c7;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+}
+
+.nita-frm-dot {
+  width: 7px;
+  height: 7px;
+  background: #0284c7;
+  border-radius: 50%;
+}
+
+.nita-frm-title {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  line-height: 1.15;
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0 0 1.2rem 0;
+}
+
+.nita-frm-lead {
+  font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+  line-height: 1.75;
+  color: #334155;
+  margin: 0 auto;
+}
+
+/* Master Form Card */
+.nita-frm-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(2, 132, 199, 0.22);
+  border-radius: 26px;
+  padding: 3.5rem 3rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 
+    0 20px 45px -8px rgba(2, 132, 199, 0.12),
+    0 4px 14px rgba(15, 23, 42, 0.03);
+}
+
+/* 2-Column Form Grid */
+.nita-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem 1.6rem;
+}
+
+.nita-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nita-form-group.full-width {
+  grid-column: span 2;
+}
+
+.nita-form-label {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #0f172a;
+  letter-spacing: 0.02em;
+}
+
+.nita-required {
+  color: #e11d48;
+}
+
+/* Input Wrappers & Elements */
+.nita-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nita-input-icon {
+  position: absolute;
+  left: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.nita-form-input,
+.nita-form-textarea {
+  width: 100%;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 0.85rem 1rem 0.85rem 2.8rem;
+  font-size: 1rem;
+  color: #0f172a;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.nita-form-textarea {
+  padding: 1rem 1.2rem;
+  resize: vertical;
+}
+
+.nita-form-input:focus,
+.nita-form-textarea:focus {
+  background: #ffffff;
+  border-color: #0284c7;
+  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12);
+}
+
+.nita-form-input::placeholder,
+.nita-form-textarea::placeholder {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* Form Actions */
+.nita-form-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.nita-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f172a;
+  color: #ffffff;
+  border: 1px solid #0f172a;
+  padding: 0.95rem 2.8rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+  transition: all 0.25s ease;
+}
+
+.nita-submit-btn:hover {
+  background: #0284c7;
+  border-color: #0284c7;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.3);
+}
+
+.nita-form-privacy {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .nita-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .nita-form-group.full-width {
+    grid-column: span 1;
+  }
+  .nita-frm-card {
+    padding: 2.2rem 1.4rem;
+  }
+  .nita-submit-btn {
+    width: 100%;
+  }
+}
+
+/* Section 5 Ends */
+
+
+/* Section 6 Starts */
+
+/* ===================================================
+   CONTACT US PAGE - SECTION 7: WHY CONTACT STYLES
+   =================================================== */
+#nita-why-contact-section {
+  position: relative;
+  width: 100%;
+  padding: 6.5rem 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f4f9fd 0%, #edf6ff 50%, #f8fafc 100%);
+  color: #0f172a;
+  font-family: "Times New Roman", Times, Georgia, serif;
+}
+
+#nita-why-contact-section * {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, serif !important;
+}
+
+/* Ambient Glow Halos */
+.nita-why-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 1;
+}
+
+.why-glow-left {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #bae6fd, transparent 70%);
+  top: 10%;
+  left: -8%;
+}
+
+.why-glow-right {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #c7d2fe, transparent 70%);
+  bottom: 5%;
+  right: -5%;
+}
+
+/* Container */
+.nita-why-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header */
+.nita-why-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.nita-why-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  padding: 0.35rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0284c7;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+}
+
+.nita-why-dot {
+  width: 7px;
+  height: 7px;
+  background: #0284c7;
+  border-radius: 50%;
+}
+
+.nita-why-title {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  line-height: 1.15;
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0 0 1.2rem 0;
+}
+
+.nita-why-title em {
+  font-style: italic;
+  color: #0369a1;
+}
+
+.nita-why-lead {
+  font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+  line-height: 1.75;
+  color: #334155;
+  margin: 0 auto;
+}
+
+/* 5-Card Bento Matrix */
+.nita-why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Card Base */
+.nita-why-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(2, 132, 199, 0.18);
+  border-radius: 22px;
+  padding: 2.2rem 2rem;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03), 0 10px 24px -4px rgba(2, 132, 199, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nita-why-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(2, 132, 199, 0.45);
+  box-shadow: 0 20px 45px -6px rgba(2, 132, 199, 0.15);
+}
+
+.nita-why-card.featured {
+  grid-column: span 2;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 249, 255, 0.95) 100%);
+  border-color: rgba(2, 132, 199, 0.3);
+}
+
+.nita-why-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.nita-why-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.nita-why-card:hover .nita-why-icon-box {
+  transform: scale(1.08);
+}
+
+.nita-why-check {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #16a34a;
+}
+
+.icon-featured {
+  background: #f0f9ff;
+  border-color: #bae6fd;
+}
+
+.icon-featured .nita-why-check {
+  color: #0284c7;
+}
+
+.nita-why-index {
+  font-size: 0.92rem;
+  font-weight: bold;
+  color: #bae6fd;
+  letter-spacing: 0.08em;
+}
+
+.index-featured {
+  color: #0284c7;
+}
+
+.nita-why-card-title {
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #0f172a;
+  margin: 0 0 0.6rem 0;
+  line-height: 1.25;
+}
+
+.nita-why-card-desc {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0;
+}
+
+/* Bottom Reassurance Strip */
+.nita-why-footer-pill {
+  text-align: center;
+}
+
+.nita-why-pill-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(2, 132, 199, 0.22);
+  padding: 0.65rem 1.8rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  color: #0f172a;
+  font-weight: bold;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+}
+
+.nita-why-psi {
+  color: #0284c7;
+  font-size: 1.15rem;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+  .nita-why-grid {
+    grid-template-columns: 1fr;
+  }
+  .nita-why-card.featured {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .nita-why-card {
+    padding: 1.8rem 1.4rem;
+  }
+  .nita-why-pill-inner {
+    border-radius: 18px;
+    padding: 0.8rem 1.2rem;
+    line-height: 1.4;
+  }
+}
+
+/* Section 6 Ends */
+
+
+/* Section 7 Starts */
+/* ===================================================
+   CONTACT US PAGE - SECTION 8: FINAL OUTRO STYLES
+   =================================================== */
+#nita-contact-outro-section {
+  position: relative;
+  width: 100%;
+  padding: 6rem 0 7.5rem 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8fafc 0%, #edf6ff 50%, #f4f9fd 100%);
+  color: #0f172a;
+  font-family: "Times New Roman", Times, Georgia, serif;
+}
+
+#nita-contact-outro-section * {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, serif !important;
+}
+
+/* Ambient Glow Halos */
+.nita-out-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 1;
+}
+
+.out-glow-left {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #bae6fd, transparent 70%);
+  top: 10%;
+  left: -8%;
+}
+
+.out-glow-right {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #c7d2fe, transparent 70%);
+  bottom: 0%;
+  right: -5%;
+}
+
+/* Container */
+.nita-out-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Master Card */
+.nita-out-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  border-radius: 28px;
+  padding: 4.2rem 3.2rem;
+  text-align: center;
+  backdrop-filter: blur(16px);
+  box-shadow: 
+    0 20px 45px -8px rgba(2, 132, 199, 0.14),
+    0 4px 14px rgba(15, 23, 42, 0.03);
+}
+
+/* Brand Badge */
+.nita-out-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  margin-bottom: 1.6rem;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.06);
+}
+
+.nita-out-psi {
+  color: #0284c7;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.nita-out-brand-title {
+  font-size: 0.88rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0284c7;
+}
+
+/* Headline */
+.nita-out-title {
+  font-size: clamp(2.3rem, 4.3vw, 3.8rem);
+  line-height: 1.15;
+  font-weight: normal;
+  color: #0f172a;
+  margin: 0 auto 1.2rem auto;
+  max-width: 860px;
+}
+
+.nita-out-title em {
+  font-style: italic;
+  color: #0369a1;
+}
+
+/* Statement Lead */
+.nita-out-lead {
+  font-size: clamp(1.15rem, 1.45vw, 1.35rem);
+  line-height: 1.7;
+  color: #334155;
+  max-width: 720px;
+  margin: 0 auto 2.8rem auto;
+}
+
+/* Action Buttons */
+.nita-out-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2.8rem;
+  flex-wrap: wrap;
+}
+
+.nita-out-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 2.4rem;
+  border-radius: 999px;
+  font-size: 0.94rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.nita-out-btn.primary {
+  background: #0f172a;
+  color: #ffffff;
+  border: 1px solid #0f172a;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+}
+
+.nita-out-btn.primary:hover {
+  background: #0284c7;
+  border-color: #0284c7;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.3);
+}
+
+.nita-out-btn.secondary {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.2);
+}
+
+.nita-out-btn.secondary:hover {
+  border-color: #0284c7;
+  color: #0284c7;
+  transform: translateY(-2px);
+}
+
+/* Micro Footer */
+.nita-out-micro-foot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  font-size: 0.94rem;
+  color: #64748b;
+  font-weight: 500;
+  width: 100%;
+  max-width: 580px;
+}
+
+.nita-out-sep {
+  color: #0284c7;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .nita-out-card {
+    padding: 3rem 1.6rem;
+  }
+  .nita-out-actions {
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .nita-out-btn {
+    width: 100%;
+  }
+  .nita-out-micro-foot {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .nita-out-sep {
+    display: none;
+  }
+}
+/* Section 7 Ends */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nita-form-success {
+  display: none;
+
+  width: 100%;
+
+  grid-column: 1 / -1;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 6px;
+
+  padding: 16px 18px;
+
+  border: 1px solid #bbf7d0;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #f0fdf4,
+    #f7fee7
+  );
+
+  box-shadow:
+    0 8px 25px rgba(34, 197, 94, 0.08);
+
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+
+.nita-form-success.show {
+  display: flex;
+
+  animation: nitaSuccessIn 0.4s ease forwards;
+}
+
+
+.nita-success-icon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  box-shadow:
+    0 5px 15px rgba(34, 197, 94, 0.25);
+}
+
+
+.nita-success-content strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #166534;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+.nita-success-content p {
+  margin: 0;
+
+  color: #4d7c5a;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+@keyframes nitaSuccessIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .nita-form-success {
+    align-items: flex-start;
+
+    padding: 14px;
+  }
+
+  .nita-success-icon {
+    width: 36px;
+    height: 36px;
+
+    font-size: 18px;
+  }
+
+}
